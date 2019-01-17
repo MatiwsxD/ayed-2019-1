@@ -1,9 +1,20 @@
 import json
-
+def supe(digit):
+    digit = str(digit)
+    if len(digit)==1:
+        return digit
+    else:
+        cont = 0
+        for i in range(len(digit)):
+            cont+= int(digit[i])
+        return supe(cont)
+        
+        
 
 # TODO Complete!
 def super_digit(n, k):
-    return 0
+    digit = str(str(n)*k)
+    return int(supe(digit))
 
 
 if __name__ == '__main__':
