@@ -1,9 +1,13 @@
 import json
 
-
+def invertir(x,y):
+    if len(x)==0:
+        return y
+    else:
+        return invertir(x[:-1],y+x[-1])
 # TODO Complete!!
 def reverse(text):
-    return text
+    return invertir(text,"")
 
 
 if __name__ == '__main__':
