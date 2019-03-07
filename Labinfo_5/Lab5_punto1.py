@@ -23,10 +23,12 @@ def fill_keypad_map():
 def keypad(n):
     keypad = fill_keypad_map()
     return keypad
-n = 5
-count = keypad(n)
-#print(f'Combinations: {count}')
-#print(count[5])
+def main():
+    n = int(input())
+    count = keypad(n)
+    #print(f'Combinations: {count}')
+    #print(count[5])
+    combination(count,n)
 
 def combination(count,n):
     matriz = []
@@ -35,10 +37,13 @@ def combination(count,n):
 ##    print(matriz)
     for j in range(1,len(matriz[1])):
         for k in range(len(matriz)):
-            y = count[k]
+            y = count[k]+[k]
 ##            print(y)
             for l in y:
-                matriz[k][j] += matriz[l][j-1]+1
+                
+                matriz[k][j] += matriz[l][j-1]
+##    for a in matriz:
+##        print(a)
                 
 ##            print(matriz[k][j])
 ##            print("Filas",k,"Columnas",j)
@@ -48,5 +53,5 @@ def combination(count,n):
     print(cont)
                 
 ##    print(matriz)            
-            
-combination(count,n)
+main()            
+
